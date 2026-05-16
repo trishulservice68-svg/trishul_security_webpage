@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trishul Security | Professional Security Services in Mumbai</title>
+  <meta name="description" content="Trishul Security & Services offers professional security guard, manpower, and facility management services across Mumbai." />
+  <meta name="keywords" content="security guard Mumbai, security services Mumbai, corporate security Mumbai, residential security Mumbai, facility management Mumbai" />
+  <meta name="theme-color" content="#0B1F3A" />
+  <style>
+    :root{
+      --navy:#0B1F3A;
+      --navy-2:#173B67;
+      --gold:#D4AF37;
+      --bg:#FFFFFF;
+      --bg-soft:#F8F9FB;
+      --text:#2E2E2E;
+      --muted:#667085;
+      --line:#E6E8EE;
+      --shadow:0 20px 60px rgba(11,31,58,.12);
+      --radius:24px;
+      --radius-sm:16px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(212,175,55,.08), transparent 20%),
+        radial-gradient(circle at top right, rgba(23,59,103,.08), transparent 18%),
+        linear-gradient(180deg, #fff, #fbfcfe 50%, #f8f9fb);
+    }
+    img{max-width:100%; display:block}
+    a{color:inherit; text-decoration:none}
+    button, input, textarea, select{font:inherit}
+    .container{width:min(1180px, calc(100% - 32px)); margin-inline:auto}
+    .section{padding:92px 0}
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px; border:1px solid rgba(23,59,103,.12);
+      border-radius:999px; background:rgba(255,255,255,.75);
+      color:var(--navy-2); font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+      font-size:.78rem;
+      box-shadow:0 8px 24px rgba(11,31,58,.06);
+    }
+    .eyebrow::before{content:""; width:8px; height:8px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 5px rgba(212,175,55,.18)}
+    h1,h2,h3{font-family: Montserrat, Inter, sans-serif; margin:0; color:var(--navy)}
+    h1{font-size:clamp(2.7rem, 6vw, 5.4rem); line-height:1.02; letter-spacing:-.04em}
+    h2{font-size:clamp(2rem, 3vw, 3.1rem); line-height:1.06; letter-spacing:-.03em}
+    h3{font-size:1.2rem; line-height:1.15}
+    p{line-height:1.75; color:var(--muted); margin:0}
+    .topbar{
+      background:linear-gradient(90deg, var(--navy), var(--navy-2));
+      color:#fff; font-size:.92rem;
+    }
+    .topbar .container{
+      display:flex; justify-content:space-between; gap:20px; padding:10px 0;
+      flex-wrap:wrap; align-items:center;
+    }
+    .topbar strong{color:#fff}
+    .topbar .badges{display:flex; gap:18px; flex-wrap:wrap}
+    .nav{
+      position:sticky; top:0; z-index:1000;
+      background:rgba(255,255,255,.72); backdrop-filter:saturate(180%) blur(18px);
+      border-bottom:1px solid rgba(11,31,58,.08);
+    }
+    .nav.scrolled{box-shadow:0 10px 30px rgba(11,31,58,.08); background:rgba(255,255,255,.94)}
+    .nav .container{
+      display:flex; align-items:center; justify-content:space-between;
+      min-height:78px; gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:14px; min-width:0}
+    .brand img{width:52px; height:52px; object-fit:contain; border-radius:14px}
+    .brand .name{display:flex; flex-direction:column; line-height:1.05}
+    .brand .name strong{font-family:Montserrat,sans-serif; font-size:1.05rem; letter-spacing:.04em}
+    .brand .name span{font-size:.84rem; color:var(--muted)}
+    .menu{display:flex; align-items:center; gap:28px}
+    .menu a{font-weight:600; color:#394151; position:relative}
+    .menu a::after{
+      content:""; position:absolute; left:0; bottom:-8px; width:0; height:2px; background:var(--gold);
+      transition:width .25s ease;
+    }
+    .menu a:hover::after{width:100%}
+    .actions{display:flex; align-items:center; gap:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 18px; border-radius:999px; border:1px solid transparent;
+      font-weight:700; transition:.25s ease; cursor:pointer;
+    }
+    .btn-primary{background:linear-gradient(135deg, var(--navy), var(--navy-2)); color:#fff; box-shadow:0 16px 40px rgba(11,31,58,.2)}
+    .btn-primary:hover{transform:translateY(-2px); box-shadow:0 20px 50px rgba(11,31,58,.24)}
+    .btn-ghost{background:#fff; border-color:rgba(11,31,58,.12); color:var(--navy)}
+    .btn-ghost:hover{border-color:rgba(212,175,55,.55); box-shadow:0 12px 30px rgba(11,31,58,.08); transform:translateY(-2px)}
+    .hamburger{
+      display:none; width:46px; height:46px; border-radius:14px; border:1px solid rgba(11,31,58,.12);
+      background:#fff; align-items:center; justify-content:center; gap:5px; flex-direction:column; cursor:pointer;
+    }
+    .hamburger span{width:18px; height:2px; background:var(--navy); border-radius:99px; display:block}
+    .mobile-menu{
+      display:none; padding:14px 0 18px; border-top:1px solid rgba(11,31,58,.08);
+    }
+    .mobile-menu a{display:block; padding:14px 0; font-weight:700; color:#334155}
+    .mobile-menu .mobile-actions{display:grid; gap:10px; margin-top:10px}
+    .hero{
+      padding:34px 0 54px;
+    }
+    .hero-grid{
+      display:grid; grid-template-columns:1.15fr .85fr; gap:30px; align-items:stretch;
+      min-height:calc(100vh - 148px);
+    }
+    .hero-copy{
+      padding:42px 0 20px; display:flex; flex-direction:column; justify-content:center;
+    }
+    .hero-copy .lead{
+      font-size:1.08rem; max-width:62ch; margin-top:18px; color:#506174;
+    }
+    .hero-copy .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px}
+    .trust-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px}
+    .pill{
+      padding:12px 16px; border-radius:999px; background:#fff; border:1px solid rgba(11,31,58,.08);
+      box-shadow:0 10px 24px rgba(11,31,58,.05); font-weight:600; color:#344054;
+    }
+    .hero-visual{
+      position:relative; border-radius:32px; overflow:hidden; box-shadow:var(--shadow);
+      min-height:680px;
+      background:linear-gradient(135deg, rgba(11,31,58,.9), rgba(23,59,103,.72));
+      isolation:isolate;
+    }
+    .hero-visual::before{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(11,31,58,.35), rgba(11,31,58,.55)),
+                 url('assets/hero.webp') center/cover no-repeat;
+      transform:scale(1.02);
+      z-index:-2;
+    }
+    .hero-visual::after{
+      content:""; position:absolute; inset:auto 0 0 0; height:46%;
+      background:linear-gradient(180deg, transparent, rgba(11,31,58,.86) 55%, rgba(11,31,58,.96));
+      z-index:-1;
+    }
+    .hero-card{
+      position:absolute; left:20px; right:20px; bottom:20px;
+      display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+    }
+    .stat{
+      padding:18px 16px; border-radius:18px; background:rgba(255,255,255,.9);
+      border:1px solid rgba(255,255,255,.4); backdrop-filter:blur(10px);
+    }
+    .stat strong{display:block; color:var(--navy); font-family:Montserrat,sans-serif; font-size:1.35rem}
+    .stat span{font-size:.9rem; color:#667085}
+    .section-head{
+      display:flex; justify-content:space-between; gap:20px; align-items:end; margin-bottom:28px; flex-wrap:wrap;
+    }
+    .section-head .copy{max-width:70ch}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+    .card{
+      background:#fff; border:1px solid rgba(11,31,58,.08); border-radius:var(--radius);
+      box-shadow:0 12px 36px rgba(11,31,58,.06);
+    }
+    .service-card{
+      padding:22px; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      min-height:170px;
+    }
+    .service-card:hover{transform:translateY(-5px); box-shadow:0 18px 48px rgba(11,31,58,.12); border-color:rgba(212,175,55,.45)}
+    .icon{
+      width:52px; height:52px; border-radius:16px; display:grid; place-items:center; margin-bottom:16px;
+      background:linear-gradient(135deg, rgba(11,31,58,.08), rgba(212,175,55,.18));
+      color:var(--navy);
+    }
+    .icon svg{width:24px; height:24px}
+    .service-card p{margin-top:10px; font-size:.96rem}
+    .about{
+      display:grid; grid-template-columns:.95fr 1.05fr; gap:26px; align-items:center;
+    }
+    .media{
+      border-radius:32px; overflow:hidden; border:1px solid rgba(11,31,58,.08); box-shadow:var(--shadow);
+      min-height:500px; background:#fff;
+    }
+    .media img{width:100%; height:100%; object-fit:cover}
+    .about-box{padding:18px 0}
+    .bullets{display:grid; gap:14px; margin-top:22px}
+    .bullet{
+      display:flex; gap:12px; align-items:flex-start; padding:14px 16px; background:#fff; border:1px solid rgba(11,31,58,.08);
+      border-radius:18px; box-shadow:0 10px 24px rgba(11,31,58,.04)
+    }
+    .bullet .dot{
+      width:28px; height:28px; border-radius:999px; background:rgba(212,175,55,.15); display:grid; place-items:center; flex:none;
+      color:var(--navy); font-weight:800; margin-top:2px;
+    }
+    .dark-band{
+      position:relative; overflow:hidden; background:linear-gradient(135deg, var(--navy), #071325 75%);
+      color:#fff;
+    }
+    .dark-band h2,.dark-band h3,.dark-band p,.dark-band .eyebrow{color:#fff}
+    .dark-band .eyebrow{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.1)}
+    .dark-band .eyebrow::before{background:var(--gold); box-shadow:0 0 0 5px rgba(212,175,55,.18)}
+    .dark-band .section-head p{color:#d7e1ee}
+    .dark-band::before, .dark-band::after{
+      content:""; position:absolute; width:380px; height:380px; border-radius:50%;
+      background:rgba(212,175,55,.08); filter:blur(10px); pointer-events:none;
+    }
+    .dark-band::before{top:-140px; right:-120px}
+    .dark-band::after{bottom:-180px; left:-150px}
+    .dark-band .card{background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.1); box-shadow:none}
+    .why .grid-4 .card, .stats-2 .card{padding:22px}
+    .why .card h3{margin-top:10px}
+    .mini-stat{display:flex; align-items:center; gap:14px}
+    .mini-stat strong{font-size:1.4rem; font-family:Montserrat,sans-serif}
+    .gallery-grid{
+      display:grid; grid-template-columns:repeat(12,1fr); gap:14px
+    }
+    .g-card{
+      border-radius:22px; overflow:hidden; position:relative; background:#fff;
+      border:1px solid rgba(11,31,58,.08); box-shadow:0 12px 32px rgba(11,31,58,.06); cursor:zoom-in;
+      min-height:220px;
+    }
+    .g-card img{width:100%; height:100%; object-fit:cover; transition:transform .35s ease}
+    .g-card:hover img{transform:scale(1.05)}
+    .g-card::after{
+      content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent, rgba(11,31,58,.24));
+      opacity:0; transition:opacity .25s ease;
+    }
+    .g-card:hover::after{opacity:1}
+    .span-7{grid-column:span 7}
+    .span-5{grid-column:span 5}
+    .span-4{grid-column:span 4}
+    .span-3{grid-column:span 3}
+    .span-6{grid-column:span 6}
+    .compliance{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+    }
+    .compliance .card{padding:22px}
+    .compliance .tag{display:inline-flex; padding:8px 12px; border-radius:999px; background:rgba(212,175,55,.12); color:var(--navy); font-weight:700; margin-bottom:12px}
+    .clients{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
+    }
+    .client{
+      display:flex; align-items:center; justify-content:center; min-height:92px; padding:18px; text-align:center;
+      border:1px solid rgba(11,31,58,.08); border-radius:20px; background:#fff; box-shadow:0 10px 24px rgba(11,31,58,.04);
+      font-weight:800; color:#475467
+    }
+    .client span{display:block; font-size:.84rem; color:var(--muted); font-weight:600; margin-top:6px}
+    .contact{
+      display:grid; grid-template-columns:1fr .9fr; gap:24px; align-items:start;
+    }
+    .form{
+      padding:24px; border-radius:28px; background:#fff; border:1px solid rgba(11,31,58,.08); box-shadow:var(--shadow)
+    }
+    .field{display:grid; gap:8px; margin-bottom:14px}
+    .field label{font-weight:700; font-size:.94rem; color:#344054}
+    .field input,.field textarea,.field select{
+      width:100%; padding:15px 16px; border-radius:16px; border:1px solid #d6dbe6; background:#fff;
+      outline:none; transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(23,59,103,.45); box-shadow:0 0 0 4px rgba(23,59,103,.08)}
+    .field textarea{min-height:140px; resize:vertical}
+    .info-panel{
+      padding:24px; border-radius:28px; background:linear-gradient(180deg, #fff, #f8f9fb);
+      border:1px solid rgba(11,31,58,.08); box-shadow:var(--shadow)
+    }
+    .info-panel .company{
+      display:flex; gap:14px; align-items:center; margin-bottom:18px
+    }
+    .info-panel .company img{width:64px; height:64px; object-fit:contain}
+    .contact-list{display:grid; gap:12px; margin-top:18px}
+    .contact-item{
+      display:flex; gap:12px; align-items:flex-start; padding:14px 16px; background:#fff; border-radius:18px;
+      border:1px solid rgba(11,31,58,.08)
+    }
+    .contact-item strong{display:block; color:var(--navy)}
+    .footer{
+      padding:28px 0 34px; border-top:1px solid rgba(11,31,58,.08)
+    }
+    .footer-row{
+      display:flex; gap:14px; justify-content:space-between; align-items:center; flex-wrap:wrap
+    }
+    .floating{
+      position:fixed; right:18px; bottom:18px; z-index:999;
+      display:grid; gap:10px;
+    }
+    .floating a{
+      width:54px; height:54px; border-radius:18px; display:grid; place-items:center; color:#fff;
+      box-shadow:0 16px 34px rgba(11,31,58,.25);
+    }
+    .call{background:linear-gradient(135deg, var(--navy), var(--navy-2))}
+    .wa{background:linear-gradient(135deg, #25D366, #1ea94c)}
+    .map{background:linear-gradient(135deg, #D4AF37, #b88d12)}
+    .lightbox{
+      position:fixed; inset:0; background:rgba(7,19,37,.86); display:none; align-items:center; justify-content:center;
+      z-index:2000; padding:24px;
+    }
+    .lightbox.open{display:flex}
+    .lightbox img{
+      width:min(1100px, 100%); max-height:88vh; object-fit:contain; border-radius:24px; box-shadow:0 20px 80px rgba(0,0,0,.4)
+    }
+    .close{
+      position:absolute; top:18px; right:18px; width:46px; height:46px; border-radius:999px; border:none; background:#fff;
+      font-size:1.6rem; line-height:1; cursor:pointer;
+    }
+    .split-note{display:grid; gap:12px; margin-top:16px}
+    .split-note .note{padding:16px 18px; border-radius:18px; background:#fff; border:1px solid rgba(11,31,58,.08)}
+    .mapbox{overflow:hidden; border-radius:24px; border:1px solid rgba(11,31,58,.08); box-shadow:var(--shadow); min-height:310px}
+    .mapbox iframe{width:100%; height:100%; min-height:310px; border:0}
+    .highlight{
+      color:var(--navy);
+      background:linear-gradient(transparent 60%, rgba(212,175,55,.24) 60%);
+      padding:0 .2em;
+    }
+    .quote{
+      font-size:1.1rem; color:#0f172a; line-height:1.8;
+      padding:22px; border-radius:24px; background:linear-gradient(180deg, #fff, #fbfcfe);
+      border:1px solid rgba(11,31,58,.08);
+      box-shadow:0 12px 30px rgba(11,31,58,.05);
+    }
+    @media (max-width: 1060px){
+      .hero-grid,.about,.contact{grid-template-columns:1fr}
+      .grid-4,.compliance,.clients{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .span-7,.span-5,.span-4,.span-3,.span-6{grid-column:span 6}
+      .hero-visual{min-height:560px}
+    }
+    @media (max-width: 760px){
+      .topbar{display:none}
+      .menu,.actions{display:none}
+      .hamburger{display:flex}
+      .mobile-menu.show{display:block}
+      .section{padding:72px 0}
+      .hero{padding-top:18px}
+      .hero-copy{padding-top:10px}
+      .hero-card{grid-template-columns:1fr; position:static; padding:16px}
+      .hero-visual{min-height:420px; display:flex; align-items:flex-end}
+      .grid-3,.grid-4,.compliance,.clients{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:1fr}
+      .span-7,.span-5,.span-4,.span-3,.span-6{grid-column:auto}
+      .floating{right:12px; bottom:12px}
+      h1{font-size:clamp(2.35rem, 13vw, 4rem)}
+      .btn{width:100%}
+      .hero-copy .cta-row{display:grid; width:100%}
+      .service-card{min-height:auto}
+      .hero-grid{min-height:auto}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="badges">
+        <span><strong>Trishul Security & Services</strong> | Mumbai</span>
+        <span>Security Guard Services • Manpower • Facility Support</span>
+      </div>
+      <div class="badges">
+        <span>24×7 Support</span>
+        <span>Rapid Deployment</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="#home" aria-label="Trishul Security home">
+        <img src="assets/logo.jpeg" alt="Trishul Security logo" />
+        <div class="name">
+          <strong>TRISHUL SECURITY</strong>
+          <span>Trusted protection, disciplined service</span>
+        </div>
+      </a>
+
+      <nav class="menu" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn btn-ghost" href="tel:+919967017645">Call Now</a>
+        <a class="btn btn-primary" href="#contact">Get Quote</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="container mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+      <div class="mobile-actions">
+        <a class="btn btn-ghost" href="tel:+919967017645">Call Now</a>
+        <a class="btn btn-primary" href="#contact">Get Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <section class="hero-copy">
+        <span class="eyebrow">Mumbai-Based Security Company</span>
+        <h1>Professional Security Solutions Across Mumbai.</h1>
+        <p class="lead">
+          Trishul Security & Services delivers trained security guards, executive protection, manpower supply, facility support, and event security for residential, corporate, industrial, and commercial spaces.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Get Free Quote</a>
+          <a class="btn btn-ghost" href="tel:+919967017645">Call Now</a>
+        </div>
+        <div class="trust-row" aria-label="Highlights">
+          <span class="pill">✓ Trained Personnel</span>
+          <span class="pill">✓ Background Verified</span>
+          <span class="pill">✓ 24×7 Support</span>
+          <span class="pill">✓ Rapid Deployment</span>
+        </div>
+      </section>
+
+      <section class="hero-visual card" aria-label="Featured company image">
+        <div class="hero-card">
+          <div class="stat">
+            <strong><span class="counter" data-target="10">0</span>+</strong>
+            <span>Years of trust</span>
+          </div>
+          <div class="stat">
+            <strong><span class="counter" data-target="200">0</span>+</strong>
+            <span>Client relationships</span>
+          </div>
+          <div class="stat">
+            <strong>24×7</strong>
+            <span>Operational support</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="section" id="about">
+    <div class="container about">
+      <div class="media">
+        <img src="assets/gallery6.webp" alt="Trishul Security staff" />
+      </div>
+      <div class="about-box">
+        <span class="eyebrow">About Trishul Security</span>
+        <h2 style="margin-top:16px">Strong presence. Disciplined people. Reliable execution.</h2>
+        <p style="margin-top:18px">
+          Trishul Security & Services is a Mumbai-based security company offering trained manpower and customized protection solutions for residential societies, commercial establishments, industries, hospitals, events, and corporate campuses.
+        </p>
+
+        <div class="split-note">
+          <div class="note">
+            <strong class="highlight">What makes the company credible:</strong> real field deployment photos, actual team training, and documented compliance rather than generic stock imagery.
+          </div>
+          <div class="note">
+            The brochure shows a broad service range covering guards, executive protection, investigations, housekeeping, manpower supply, VIP security, mall security, bodyguards, and industrial coverage. fileciteturn0file0
+          </div>
+        </div>
+
+        <div class="bullets">
+          <div class="bullet"><div class="dot">1</div><div><strong>Client-focused deployment</strong><p>Security plans are matched to site type, shift pattern, and risk level.</p></div></div>
+          <div class="bullet"><div class="dot">2</div><div><strong>Professional conduct</strong><p>Uniform discipline, logging, and site supervision are presented as operating standards.</p></div></div>
+          <div class="bullet"><div class="dot">3</div><div><strong>Real human assets</strong><p>The website should use your actual staff photos, not generic security stock photos.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark-band" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="copy">
+          <span class="eyebrow">Services</span>
+          <h2 style="margin-top:16px">Everything the brochure promises, but presented cleanly.</h2>
+          <p style="margin-top:14px">Use concise service cards instead of dumping a brochure into the webpage. That is the difference between a website and a PDF mirror.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card service-card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10l8-5 8 5v10"/><path d="M9 20v-6h6v6"/></svg>
+          </div>
+          <h3>Residential Security</h3>
+          <p>Societies, gated communities, and apartment complexes.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z"/></svg>
+          </div>
+          <h3>Corporate & Industrial Security</h3>
+          <p>Offices, plants, factories, warehouses, and business campuses.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19l4-7 4 3 4-6 4 10"/><path d="M5 19h14"/></svg>
+          </div>
+          <h3>Event & VIP Protection</h3>
+          <p>Special events, executive protection, bodyguards, and crowd control.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v10H4z"/><path d="M8 7V5h8v2"/><path d="M7 11h10"/></svg>
+          </div>
+          <h3>Facility & Housekeeping</h3>
+          <p>Housekeeping, support staff, and manpower supply for operations.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 18h12"/><path d="M8 18V8a4 4 0 0 1 8 0v10"/><path d="M10 22h4"/></svg>
+          </div>
+          <h3>Shopping Mall & Hotel Security</h3>
+          <p>Front-of-house presence, access control, and guest discipline.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l3 7h7l-5.5 4 2 7L12 17l-6.5 4 2-7L2 10h7z"/></svg>
+          </div>
+          <h3>Investigations & Special Assignments</h3>
+          <p>Case-specific support and tailored security assignments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="duties">
+    <div class="container">
+      <div class="section-head">
+        <div class="copy">
+          <span class="eyebrow">Duties & Responsibility</span>
+          <h2 style="margin-top:16px">Present the operating discipline, not just the service list.</h2>
+          <p style="margin-top:14px">The brochure includes useful operational details. Use them as proof of seriousness, not as clutter.</p>
+        </div>
+      </div>
+
+      <div class="grid-3 stats-2">
+        <div class="card">
+          <div class="mini-stat">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="M8 10h8"/><path d="M8 14h5"/></svg></div>
+            <div>
+              <strong>Log books & registers</strong>
+              <p>Daily logs, incident entries, and visitor records.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="mini-stat">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16"/><path d="M12 4v16"/></svg></div>
+            <div>
+              <strong>Vehicle & gate checks</strong>
+              <p>Incoming and outgoing goods and vehicle inspection.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="mini-stat">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <div>
+              <strong>Safety & response</strong>
+              <p>Fast alarm response, asset protection, and 24×7 monitoring.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote" style="margin-top:18px">
+        Additional responsibilities highlighted in the brochure include weekly and monthly reporting, female security personnel for frisking/search support, and supervisor round checks. fileciteturn0file0
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark-band" id="why">
+    <div class="container why">
+      <div class="section-head">
+        <div class="copy">
+          <span class="eyebrow">Why Choose Us</span>
+          <h2 style="margin-top:16px">Built to communicate trust in under 5 seconds.</h2>
+          <p style="margin-top:14px">This section should answer the buyer’s real question: why you, not the next local security agency.</p>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <div class="card service-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Verified Personnel</h3>
+          <p>Use only vetted guards with disciplined site behavior.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14"/><path d="M12 5v14"/></svg></div>
+          <h3>Rapid Deployment</h3>
+          <p>Suitable for urgent staffing and replacement needs.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 6h8"/><path d="M7 12h10"/><path d="M6 18h12"/></svg></div>
+          <h3>Process Discipline</h3>
+          <p>Logging, reporting, and supervision as a service standard.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18V8l8-4 8 4v10"/><path d="M9 18v-6h6v6"/></svg></div>
+          <h3>Site-Specific Solutions</h3>
+          <p>No copy-paste packages. Each deployment should match the site.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <div class="copy">
+          <span class="eyebrow">Gallery</span>
+          <h2 style="margin-top:16px">Use real company photographs. That is the trust signal.</h2>
+          <p style="margin-top:14px">These are the images that should carry the website visually: team deployment, training, and field presence.</p>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="g-card span-7"><img src="assets/gallery1.webp" alt="Security team deployment" data-full="assets/gallery1.webp"></figure>
+        <figure class="g-card span-5"><img src="assets/gallery2.webp" alt="Security team on duty" data-full="assets/gallery2.webp"></figure>
+        <figure class="g-card span-4"><img src="assets/gallery3.webp" alt="Security staff lineup" data-full="assets/gallery3.webp"></figure>
+        <figure class="g-card span-4"><img src="assets/gallery4.webp" alt="Training or briefing session" data-full="assets/gallery4.webp"></figure>
+        <figure class="g-card span-4"><img src="assets/gallery5.webp" alt="Security team presence" data-full="assets/gallery5.webp"></figure>
+        <figure class="g-card span-6"><img src="assets/hero.webp" alt="Promotional security image" data-full="assets/hero.webp"></figure>
+        <figure class="g-card span-6"><img src="assets/gallery6.webp" alt="Security personnel group" data-full="assets/gallery6.webp"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="clients">
+    <div class="container">
+      <div class="section-head">
+        <div class="copy">
+          <span class="eyebrow">Clients</span>
+          <h2 style="margin-top:16px">Trusted by leading organizations</h2>
+          <p style="margin-top:14px">The brochure’s client page is valuable social proof. Present the names neatly instead of cramming them into a single image.</p>
+        </div>
+      </div>
+
+      <div class="clients">
+        <div class="client">MMRDA</div>
+        <div class="client">Maruti Suzuki</div>
+        <div class="client">Mahindra</div>
+        <div class="client">Tata Motors</div>
+        <div class="client">Toyota</div>
+        <div class="client">Shapoorji Pallonji</div>
+        <div class="client">Thakur Group</div>
+        <div class="client">Bredco</div>
+        <div class="client">Sarova</div>
+        <div class="client">Sanghvi</div>
+        <div class="client">Bhomi & Buildings</div>
+        <div class="client">Municipal Corporation</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark-band" id="compliance">
+    <div class="container">
+      <div class="section-head">
+        <div class="copy">
+          <span class="eyebrow">Compliance</span>
+          <h2 style="margin-top:16px">Put certificates where buyers expect them.</h2>
+          <p style="margin-top:14px">A security company is judged by legitimacy. Make compliance visible and easy to find.</p>
+        </div>
+      </div>
+
+      <div class="compliance">
+        <div class="card">
+          <span class="tag">License</span>
+          <h3>Government License</h3>
+          <p>Display the legal operating license prominently.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Registration</span>
+          <h3>GST & PF Registration</h3>
+          <p>Show tax and employee-compliance documents.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Company</span>
+          <h3>Firm Registration</h3>
+          <p>Use scanned certificate images from the brochure.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Proof</span>
+          <h3>Document Gallery</h3>
+          <p>Keep the original certificates in a clean lightbox layout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container contact">
+      <div class="form">
+        <span class="eyebrow">Contact</span>
+        <h2 style="margin-top:16px">Request a security quotation</h2>
+        <p style="margin-top:12px">Keep the form simple. Visitors should be able to call or submit in under 30 seconds.</p>
+
+        <form style="margin-top:22px">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your full name" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="Mobile number" />
+          </div>
+          <div class="field">
+            <label for="service">Service Required</label>
+            <select id="service">
+              <option>Security Guards</option>
+              <option>Corporate Security</option>
+              <option>Residential Security</option>
+              <option>Event Security</option>
+              <option>Manpower Supply</option>
+              <option>Housekeeping</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell us about your location, shift requirement, and timeline."></textarea>
+          </div>
+          <button class="btn btn-primary" type="button" onclick="window.location.href='mailto:trishulservice68@gmail.com?subject=Website%20Inquiry'">Send Inquiry</button>
+        </form>
+      </div>
+
+      <div class="info-panel">
+        <div class="company">
+          <img src="assets/logo.jpeg" alt="Trishul Security logo">
+          <div>
+            <h3>Trishul Security & Services</h3>
+            <p>Mumbai, Maharashtra</p>
+          </div>
+        </div>
+
+        <div class="mapbox">
+          <iframe
+            title="Trishul Security location"
+            src="https://www.google.com/maps?q=Trishul%20security%20%26%20services%20Kandivali%20Mumbai&output=embed"
+            loading="lazy"></iframe>
+        </div>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v2a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 4.2 2 2 0 0 1 5.1 2h2a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.4 9.3a16 16 0 0 0 6.3 6.3l.9-1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"/></svg></div>
+            <div><strong>Phone</strong><p>9967017645 • 9082969741 • 8286738309</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg></div>
+            <div><strong>Email</strong><p>trishulservice68@gmail.com</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-4.2 7-11a7 7 0 1 0-14 0c0 6.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+            <div><strong>Office</strong><p>F-61 Centrium Shopping Center, Lokhandwala, Kandivali (East), Mumbai – 400101</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>© 2026 Trishul Security & Services. All rights reserved.</p>
+      <p>Designed for trust, clarity, and client conversion.</p>
+    </div>
+  </footer>
+
+  <div class="floating" aria-label="Quick actions">
+    <a class="call" href="tel:+919967017645" title="Call">☎</a>
+    <a class="wa" href="https://wa.me/919967017645" target="_blank" rel="noopener" title="WhatsApp">✆</a>
+    <a class="map" href="#contact" title="Location">⌂</a>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close" id="closeLb" aria-label="Close">×</button>
+    <img id="lightboxImg" alt="Expanded gallery image">
+  </div>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('show');
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const counters = document.querySelectorAll('.counter');
+    const countUp = (el) => {
+      const target = +el.dataset.target;
+      let current = 0;
+      const step = Math.max(1, Math.ceil(target / 60));
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = current;
+      }, 18);
+    };
+
+    const counterObs = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          countUp(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.45 });
+    counters.forEach(c => counterObs.observe(c));
+
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    document.querySelectorAll('.g-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.dataset.full || img.src;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+      });
+    });
+    document.getElementById('closeLb').addEventListener('click', () => {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+    });
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) {
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden', 'true');
+      }
+    });
+  </script>
+</body>
+</html>
