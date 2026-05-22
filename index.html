@@ -804,18 +804,6 @@
     </button>
   </div>
 
-  <div class="container mobile-menu" id="mobileMenu" role="menu">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#clients">Clients</a>
-    <a href="#contact">Contact</a>
-    <div class="mobile-actions">
-      <a class="btn btn-ghost" href="tel:+919967017645">📞 Call Now</a>
-      <a class="btn btn-primary" href="#contact">Get Free Quote</a>
-    </div>
-  </div>
 </header>
 
 <!-- ════════════════ HERO ════════════════ -->
@@ -1451,17 +1439,7 @@
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ── HAMBURGER ── */
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('show');
-    hamburger.setAttribute('aria-expanded', open);
-  });
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    mobileMenu.classList.remove('show');
-    hamburger.setAttribute('aria-expanded', false);
-  }));
+
 
   /* ── SCROLL REVEAL ── */
   const revealObs = new IntersectionObserver((entries) => {
